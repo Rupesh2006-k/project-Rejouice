@@ -1,0 +1,758 @@
+@charset "UTF-8";
+/** @format */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "light";
+  background-color: #000;
+  position: relative;
+}
+
+@font-face {
+  font-family: "light";
+  src: url(./SuisseIntl-Light.ttf);
+}
+@font-face {
+  font-family: "regular";
+  src: url(./SuisseIntl-Regular-TTF.ttf);
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 55;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  padding: 1.5vw 1.9vw;
+  color: aliceblue;
+  font-size: 1vw;
+  font-weight: 500;
+  mix-blend-mode: difference;
+}
+nav .center {
+  margin-left: 10vw;
+  display: flex;
+  gap: 0.5vw;
+}
+nav .center a {
+  color: aliceblue;
+  text-decoration: none;
+}
+nav .center a:nth-child(1) {
+  color: rgb(162, 165, 167);
+}
+nav .menu {
+  display: none;
+}
+
+main {
+  background-attachment: fixed;
+}
+
+main .logo {
+  width: 100%;
+  height: 90vh;
+  padding: 2.2vw;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 13rem;
+}
+main .logo img {
+  width: 96%;
+  margin-left: 2%;
+  filter: invert(1) brightness(2);
+}
+main .logo .bottom-text {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .logo .bottom-text .btleft {
+  display: flex;
+  gap: 5vw;
+  line-height: 1;
+  font-weight: 100;
+  padding-top: 5vw;
+}
+main .logo .bottom-text .btright {
+  padding-top: 5vw;
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .logo .bottom-text .btright i {
+  font-size: 1.5vw;
+  font-weight: 100;
+  color: #fff;
+}
+main .page2 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+main .page2 video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .page2 h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5vw;
+  color: #fff;
+}
+main .page2 h5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  color: #383737;
+  font-weight: 900;
+  font-size: 1.2vw;
+  mix-blend-mode: darken;
+  pointer-events: none;
+}
+main .page2 .reel {
+  height: 100%;
+  width: 100%;
+  display: none;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+main .page2 .reel.active {
+  display: block;
+}
+main .page2 .reel #reel-full {
+  height: 80%;
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .page3 {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+}
+main .page3 .our-services .top {
+  text-align: center;
+  padding: 3vw 0;
+  border-bottom: 0.1rem solid rgb(249, 249, 249);
+  margin: 0 2vw;
+}
+main .page3 .our-services .top h1 {
+  font-size: 4vw;
+  line-height: 1.2;
+  font-weight: 100;
+  padding: 0 10vw 0 0;
+}
+main .page3 .our-services .top h1 a {
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+}
+main .page3 .our-services .top h1 a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.2vw;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+main .page3 .our-services .top h1 a:hover::after {
+  width: 0;
+  animation-name: line-anime;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+@keyframes line-anime {
+  0% {
+    width: 0;
+    right: 0;
+  }
+  100% {
+    right: 100%;
+    width: 100%;
+  }
+}
+main .page3 .our-services .bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 3vw 0;
+}
+main .page3 .our-services .bottom .bottomLeft {
+  width: 50%;
+  padding: 2vw;
+  font-size: 1.2vw;
+}
+main .page3 .our-services .bottom .bottomLeft p {
+  width: 30%;
+}
+main .page3 .our-services .bottom .bottomRight {
+  width: 50%;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  font-size: 1.2vw;
+}
+main .page3 .our-services .bottom .bottomRight p {
+  width: 45%;
+}
+main .page3 .our-services .bottom .bottomRight h4 {
+  font-weight: 100;
+  position: relative;
+}
+main .page3 .our-services .bottom .bottomRight h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.1vw;
+  width: 15%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+main .page3 .our-services .bottom .bottomRight h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.1vw;
+  width: 0;
+  background-color: #fff;
+  transition: width 0.4s ease;
+}
+main .page3 .our-services .bottom .bottomRight h4:hover::after {
+  width: 15%;
+}
+@keyframes line-anime {
+  0% {
+    width: 0;
+    right: 0;
+  }
+  100% {
+    right: 100%;
+    width: 15%;
+  }
+}
+main .page3 .Highlights {
+  width: 100%;
+  margin-top: 20vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2vw;
+  font-size: 1.3vw;
+  margin-bottom: 3vw;
+}
+main .page3 .Highlights a {
+  text-decoration: none;
+  color: #fff;
+}
+main .page4 {
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  padding: 0 1rem;
+  padding-bottom: 10vw;
+}
+main .page4 .bottom {
+  display: flex;
+  gap: 1rem;
+}
+main .page4 .bottom img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main .page4 .bottom .box2 {
+  width: 50%;
+}
+main .page4 .bottom .box3 {
+  width: 50%;
+}
+main .page4 img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main .page4 .box {
+  position: relative;
+  overflow: hidden; /* optional: prevents overlay from going outside */
+}
+main .page4 .overlay {
+  position: absolute;
+  width: 20vw;
+  height: 25vw;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* soft shadow */
+  opacity: 0;
+}
+main .page5 {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+main .page5 #icon {
+  width: 96%;
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid rgb(72, 70, 70);
+  margin: 0 2%;
+  padding: 10vw 0;
+}
+main .page5 #icon img {
+  width: 7.5%;
+}
+main .page5 #icon .black {
+  filter: invert(1) brightness(2);
+}
+main .page5 #scrollbar {
+  width: 100%;
+}
+main .page5 #scrollbar .text {
+  padding: 1vw 0;
+  font-size: 1.3vw;
+  color: rgba(0, 0, 0, 0.9254901961);
+  padding-left: 2.2vw;
+}
+main .page5 #scrollbar .swiper {
+  height: 40vw;
+  overflow-x: scroll;
+  white-space: nowrap;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+main .page5 #scrollbar .swiper .slider {
+  height: 35vw;
+  width: 90vw;
+  margin: 1rem;
+  border-radius: 0.5vw;
+}
+main .page5 #scrollbar .swiper .slider img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 0.5vw;
+}
+main .page5 #scrollbar .swiper .slider video {
+  width: 100%;
+  border-radius: 0.5vw;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide {
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .rivian {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2vw;
+  font-size: 1.3vw;
+  height: 30vw;
+  color: #fff;
+  background-color: #000;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .rivian img {
+  filter: invert(1) brightness(2);
+  width: 40%;
+  margin-left: 16vw;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .rivian p span {
+  color: #444;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .noovo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2vw;
+  font-size: 1.3vw;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #aba7a7;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .noovo p span {
+  color: #444;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .noovo .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .noovo .bottom img {
+  width: 40%;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .clock {
+  padding: 2vw;
+  font-size: 1.3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #aba7a7;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .clock .top h2 {
+  font-weight: 100;
+  padding-left: 0.5vw;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .clock .top p {
+  text-align: center;
+  color: rgba(58, 56, 56, 0.737254902);
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .clock .top p:hover {
+  color: #000;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .clock .top p span {
+  padding-left: 5vw;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .clock img {
+  width: 20vw;
+  margin: 0 auto;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .odd {
+  height: 25vw;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .Learn {
+  display: flex;
+  flex-direction: column;
+  gap: 16vw;
+  font-size: 1.3vw;
+  padding: 2vw;
+  color: #fff;
+  background-color: #000;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .Learn p span {
+  color: #444;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .Learn h5 {
+  font-size: 1.3vw;
+  font-weight: 100;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .driving {
+  font-size: 1.3vw;
+  padding: 2vw;
+  background: #fff;
+  border: 1px solid #aba7a7;
+}
+main .page5 #scrollbar .swiper .swiper-wrapper .swiper-slide .driving p span {
+  color: #444;
+}
+main .page5 #scrollbar .swiper::-webkit-scrollbar {
+  display: none;
+}
+main .page6 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+main .page6 .our {
+  height: 30vh;
+  width: 100%;
+}
+main .page6 .our h1 {
+  font-size: 4.5vw;
+  padding: 1vw 2vw;
+  font-weight: 500;
+}
+main .page6 .document {
+  display: inline-flex;
+  padding: 1vw;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+}
+main .page6 .document p {
+  width: 40%;
+  padding-right: 15vw;
+  font-size: 1.35vw;
+}
+main .page6 .document h2 {
+  font-weight: 100;
+  padding-left: 1vw;
+}
+main .page6 .ourBottom {
+  border-bottom: 1px solid black;
+  width: 96%;
+  margin: 0 auto;
+}
+main .page7 {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .page7 .container {
+  transition: all 0.3s linear;
+  width: 60%; /* 👈 starting width */
+  transition: all 0.3s linear;
+}
+main .page7 .container video {
+  width: 100%;
+}
+main .page8 {
+  height: 80vh;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .page8 .get {
+  font-size: 4vw;
+  transition: all 1s linear;
+  position: relative;
+  transition: all 0.5s ease;
+}
+main .page8 .get::before {
+  content: "";
+  height: 0.2vw;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #000;
+}
+main footer {
+  height: 98vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1vw;
+}
+main footer .top {
+  display: flex;
+  justify-content: space-between;
+}
+main footer .top .fleft {
+  height: 40vh;
+  width: 40%;
+  background-color: rgb(0, 0, 0);
+  padding: 2vw;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main footer .top .fleft h1 {
+  font-size: 2.5vw;
+}
+main footer .top .fleft .bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  padding-bottom: 2vw;
+}
+main footer .top .fleft .bottom p {
+  font-size: 1vw;
+}
+main footer .top .fleft .bottom span {
+  color: #444;
+  width: 55%;
+  border-bottom: 0.1vw solid rgb(255, 255, 255);
+}
+main footer .top .fleft .bottom span input {
+  outline: none;
+  border: none;
+  padding: 0.5vw;
+  background-color: #000000;
+  font-size: 1vw;
+  color: #fff;
+}
+main footer .top .fright {
+  height: 40vh;
+  width: 40%;
+  background-color: rgb(0, 0, 0);
+}
+main footer .top .fright .topf {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+  color: #fff;
+}
+main footer .top .fright .topf ul {
+  list-style-type: none;
+}
+main footer .top .fright .topf ul li {
+  padding: 0.1vw;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+}
+main footer .top .fright .topf ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.09vw;
+  width: 80%;
+  transition: all 0.3s ease;
+}
+main footer .top .fright .topf ul li:hover::after {
+  background-color: #fff;
+  width: 0;
+  animation-name: line-anime;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+@keyframes line-anime {
+  0% {
+    width: 0;
+    right: 0;
+  }
+  100% {
+    right: 100%;
+    width: 100%;
+  }
+}
+main footer .top .fright .bottomf {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw;
+  color: #fff;
+}
+main footer .top .fright .bottomf a {
+  color: #fff;
+}
+main footer img {
+  margin: 0 auto;
+  filter: invert(1) brightness(2);
+  width: 96%;
+  padding-bottom: 5vw;
+  transition: all 0.3s linear;
+}
+
+@media (max-width: 1024px) {
+  nav {
+    padding-top: 3vw;
+  }
+  nav .menu {
+    display: block;
+    font-size: 2.2vw;
+  }
+  nav .center,
+  nav .right {
+    display: none;
+  }
+  nav .left {
+    font-size: 2.2vw;
+  }
+  main .logo {
+    justify-content: space-between;
+    justify-items: flex-start;
+  }
+  main .logo img {
+    margin-top: 10vw;
+  }
+  main .page3 .our-services .bottomLeft p {
+    font-size: 2vw;
+  }
+  main .page3 .our-services .bottom .bottomRight p {
+    font-size: 2vw;
+    width: 90%;
+  }
+  main .page3 .our-services .bottom .bottomRight h4 {
+    font-size: 2vw;
+  }
+  main .page3 .our-services .bottom .bottomRight h4::after {
+    width: 25%;
+  }
+  main .page3 .Highlights p {
+    font-size: 2vw;
+  }
+  main .page3 .Highlights a {
+    font-size: 2vw;
+  }
+  main .page5 #scrollbar .text {
+    font-size: 2vw;
+  }
+  main .page6 .our p {
+    font-size: 2vw;
+    width: 60%;
+    padding-left: 5vw;
+  }
+}
+@media (min-width: 2800px) {
+  main .page4 {
+    padding-bottom: 0;
+    height: 70vh;
+  }
+  main .page4 .box1 {
+    height: auto;
+  }
+  main .page4 .bottom {
+    margin-top: 0;
+  }
+  main .page4 .bottom img {
+    height: auto;
+  }
+  main .page3 {
+    min-height: 1vh;
+  }
+}
+body {
+  position: relative;
+}
+
+#loader {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  position: absolute;
+  z-index: 999;
+  gap: 1rem;
+  font-size: 1.6vw;
+} 
+/* Scroll disable karne ke liye */
+body.stop-scroll {
+  height: 100vh;
+  overflow: hidden;
+}/*# sourceMappingURL=rejouice.css.map */
